@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App</title>
+    <link rel="icon" href="./img/favicon.png" />
+    <link rel="stylesheet" href="./css/styles.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="centered-form">
+      <div class="centered-form__box">
+          <h1>Join With Us</h1>
+          <form action="./chat.html">
+            <label for="">Display Name</label>
+            <!-- attribute 'name' của input sẽ hiện trên URL và có thể lấy giá trị bằng method GET -->
+            <input type="text" name="username" placeholder="Display Name" required>
+            <label for="">Room Name</label>
+            <input type="text" name="room" placeholder="Your Room's Name" required>
+            <button>Join</button>
+          </form>
+      </div>
+      
+    </div>
+  </body>
+</html>

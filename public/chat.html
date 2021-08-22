@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App</title>
+    <link rel="icon" href="./img/favicon.png" />
+    <link rel="stylesheet" href="./css/styles.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="chat">
+      <div id="sidebar" class="chat__sidebar">
+        <h1>Chat app</h1>
+      </div>
+
+      <div class="chat__main">
+        <!-- <button id="increment-id">+1</button> -->
+        <div id="messages" class="chat__messages"></div>
+        <div class="compose">
+          <form action="" id="message-form">
+            <input
+              name="message"
+              type="text"
+              placeholder="Your Message"
+              required
+              autocomplete="off"
+            />
+            <button>Send Message</button>
+          </form>
+          <button id="send-location">Send Your Location</button>
+        </div>
+      </div>
+    </div>
+
+    <script id="message-template" type="text/html">
+      <div class="message">
+        <p>
+          <span class="message__name">{{username}}</span>
+          <span class="message__meta">{{createAt}}</span>
+        </p>
+        <p>{{message}}</p>
+      </div>
+    </script>
+
+    <script id="message-location-template" type="text/html">
+      <div class="message">
+        <p>
+          <span class="message__name">{{username}}</span>
+          <span class="message__meta">{{createAt}}</span>
+        </p>
+        <p>
+          <a href="{{messagelocation}}" target="_blank">{{location}}</a>
+        </p>
+      </div>
+    </script>
+
+    <script id="sidebar-template" type="text/html">
+      <div>
+        <h2 class="room-title">{{room}}</h2>
+        <h3 class="list-title">List Of User</h3>
+        <ul class="users">
+          <!-- cách in dãy users bằng tag -->
+          {{#users}} 
+          <!-- truy cập attribute của object user trong dãy users -->
+          <li>{{username}}</li>
+          {{/users}}
+        </ul>
+      </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.1/qs.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- socket.io.js là file của socket.io npm, client side có thể truy cập vào file này -->
+
+    <script src="js/chat.js"></script>
+  </body>
+</html>
